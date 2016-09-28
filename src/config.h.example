@@ -1,0 +1,5 @@
+class Config {
+public:
+    static constexpr const char* network = "network-name";
+    static constexpr const char* password = "network-password";
+};
