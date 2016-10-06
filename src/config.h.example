@@ -2,4 +2,6 @@ class Config {
 public:
     static constexpr const char* network = "network-name";
     static constexpr const char* password = "network-password";
+    static constexpr const char* pushover_token = "pushover-app-token";
+    static constexpr const char* pushover_user = "pushover-user-token"
 };
