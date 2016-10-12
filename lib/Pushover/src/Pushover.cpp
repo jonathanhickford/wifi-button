@@ -34,8 +34,8 @@ void Pushover::send_message(const char* title, const char* message) {
 String Pushover::create_body(const char* title, const char* message) {
   return "token=" + String(pushover_token) +
    "&user=" + String(pushover_user) +
-   "&title=" + URLEncode(title) +
-   "&message" + URLEncode(message);
+   "&title=" + Pushover::URLEncode(title) +
+   "&message" + Pushover::URLEncode(message);
 }
 
 String Pushover::URLEncode(const char* msg) {
