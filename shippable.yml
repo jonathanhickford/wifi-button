@@ -33,6 +33,7 @@ env:
 
 install:
     - pip install -U platformio
+    - mv src/config.h.example src/config.h
 
 script:
     - platformio run
