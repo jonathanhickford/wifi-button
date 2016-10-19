@@ -12,7 +12,7 @@ private:
   String create_body(const char* title, const char* message);
 
 public:
-  Pushover(const char* pushover_token, const char* pushover_user);
+  Pushover(const char* token, const char* user);
 
   void send_message(const char* title, const char* message);
 };
