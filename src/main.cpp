@@ -10,6 +10,7 @@
 
 
 void connect_to_wifi();
+void go_to_sleep();
 
 void setup()
 {
@@ -26,14 +27,17 @@ void setup()
 }
 
 void loop() {
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
-  // wait for a second
-  delay(1000);
-  // turn the LED off by making the voltage LOW
-  digitalWrite(LED_BUILTIN, LOW);
-   // wait for a second
-  delay(1000);
+  // for(int i=0;i<10;i++) {
+  //   // turn the LED on (HIGH is the voltage level)
+  //   digitalWrite(LED_BUILTIN, HIGH);
+  //   // wait for a second
+  //   delay(500);
+  //   // turn the LED off by making the voltage LOW
+  //   digitalWrite(LED_BUILTIN, LOW);
+  //    // wait for a second
+  //   delay(500);
+  // }
+  go_to_sleep();
 }
 
 
@@ -51,4 +55,10 @@ void connect_to_wifi() {
 
   Serial.print("Connected to wifi, IP address: ");
   Serial.println(WiFi.localIP());
+}
+
+void go_to_sleep() {
+  Serial.println("Going to sleep...");
+  ESP.deepSleep(0);
+  delay(1000);
 }
