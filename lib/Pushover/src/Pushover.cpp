@@ -1,15 +1,14 @@
 #include "Pushover.h"
 
-Pushover::Pushover (const char* token, const char* user) {
+Pushover::Pushover (const char* token, const char* user, const char* endpoint, const char* fingerprint) {
   pushover_user = user;
   pushover_token = token;
+  pushover_endpoint = endpoint;
+  pushover_fingerprint = fingerprint;
 }
 
 
 void Pushover::send_message(const char* title, const char* message) {
-  const char* url = "https://api.pushover.net/1/messages.json";
-  const char* fingerprint = "27 41 80 CE F4 46 C9 02 F6 8C C0 D1 CC 72 3F D2 43 FA 35 0D";
-
   Serial.println("[Pushover] message:");
   Serial.println(title);
   Serial.println(message);
@@ -21,7 +20,7 @@ void Pushover::send_message(const char* title, const char* message) {
   HTTPClient http;
 
   Serial.println("[HTTP] begin...");
-  http.begin(url, fingerprint);
+  http.begin(pushover_endpoint, pushover_fingerprint);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   Serial.println("[HTTP] POST...");
   int httpResponseCode = http.POST(content);

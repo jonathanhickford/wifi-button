@@ -4,4 +4,6 @@ public:
     static constexpr const char* password = "network-password";
     static constexpr const char* pushover_token = "pushover-app-token";
     static constexpr const char* pushover_user = "pushover-user-token";
+    static constexpr const char* pushover_endpoint = "https://api.pushover.net/1/messages.json";
+    static constexpr const char* pushover_fingerprint = "1E D5 B7 68 BB 25 AD A3 E0 96 78 A4 68 48 08 4F 07 E4 8D AB";
 };

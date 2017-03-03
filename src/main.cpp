@@ -22,7 +22,7 @@ void setup()
 
   connect_to_wifi();
 
-  Pushover pushover(Config::pushover_token, Config::pushover_user);
+  Pushover pushover(Config::pushover_token, Config::pushover_user, Config::pushover_endpoint, Config::pushover_fingerprint);
   pushover.send_message("Study", "I need you in the study");
 }
 
