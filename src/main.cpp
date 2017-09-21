@@ -43,6 +43,7 @@ void loop() {
 
 void connect_to_wifi() {
   Serial.println("Begin connection");
+  WiFi.mode(WIFI_STA);
   WiFi.begin(Config::network, Config::password);
 
   Serial.print("Connecting to wifi");
